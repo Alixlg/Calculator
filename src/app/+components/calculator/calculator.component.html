@@ -1,0 +1,42 @@
+<div class="calculator">
+  <div class="prev">{{prev}} {{op}}</div>
+  <div class="current">{{current}}</div>
+
+  <div class="buttons">
+    @if (isMoreOption) {
+      <button class="oprator"><span>Tan</span></button>
+      <button class="oprator"><span>Cot</span></button>
+      <button class="oprator"><span>Sin</span></button>
+      <button class="oprator"><span>Cos</span></button>
+    }
+
+    <button (click)="clearEntry()" class="oprator"><span>CE</span></button>
+    <button (click)="clear()" class="oprator"><span>C</span></button>
+    <button (click)="delete()" class="oprator"><span>Del</span></button>
+    <button (click)="isMoreOption =! isMoreOption" class="oprator"><span>More Option</span></button>
+
+    <button (click)="digit('7')">7</button>
+    <button (click)="digit('8')">8</button>
+    <button (click)="digit('9')">9</button>
+
+    <button (click)="operation('x')" class="oprator"><span>x</span></button>
+
+    <button (click)="digit('4')">4</button>
+    <button (click)="digit('5')">5</button>
+    <button (click)="digit('6')">6</button>
+
+    <button (click)="operation('+')" class="oprator"><span>+</span></button>
+
+    <button (click)="digit('1')">1</button>
+    <button (click)="digit('2')">2</button>
+    <button (click)="digit('3')">3</button>
+
+    <button (click)="operation('-')" class="oprator"><span>-</span></button>
+
+    <button class="oprator"><span>.</span></button>
+    <button (click)="digit('0')">0</button>
+    <button (click)="equaliz()" class="oprator"><span>=</span></button>
+
+    <button (click)="operation('/')" class="oprator"><span>/</span></button>
+  </div>
+</div>
