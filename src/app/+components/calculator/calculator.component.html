@@ -5,10 +5,10 @@
 
   <div class="buttons">
     @if (isMoreOption) {
-      <button class="oprator"><span>Tan</span></button>
-      <button class="oprator"><span>Cot</span></button>
-      <button class="oprator"><span>Sin</span></button>
-      <button class="oprator"><span>Cos</span></button>
+      <button (click)="tan()" class="oprator"><span>Tan</span></button>
+      <button (click)="sin()" class="oprator"><span>Sin</span></button>
+      <button (click)="cos()" class="oprator"><span>Cos</span></button>
+      <button (click)="sqrt()" class="oprator"><span>Sqrt</span></button>
     }
 
     <button (click)="clearEntry()" class="oprator"><span>CE</span></button>
@@ -34,7 +34,7 @@
 
     <button (click)="operation('-')" class="oprator"><span>-</span></button>
 
-    <button class="oprator"><span>.</span></button>
+    <button (click)="dot()" class="oprator"><span>.</span></button>
     <button (click)="digit('0')">0</button>
     <button (click)="equaliz()" class="oprator"><span>=</span></button>
 

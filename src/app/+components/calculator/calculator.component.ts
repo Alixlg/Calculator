@@ -12,6 +12,12 @@ export class CalculatorComponent {
   op: string = '';
   isMoreOption: boolean = false;
 
+  dot() {
+    if (!this.current.includes('.')) {
+      this.current += '.';
+    }
+  }
+
   clear() {
     this.prev = '0';
     this.current = '0';
@@ -57,5 +63,21 @@ export class CalculatorComponent {
         this.current = String(a - b);
         break;
     }
+  }
+
+  sin() {
+    this.current = Math.sin(Number(this.current)).toString();
+  }
+
+  cos() {
+    this.current = Math.cos(Number(this.current)).toString();
+  }
+
+  tan() {
+    this.current = Math.tan(Number(this.current)).toString();
+  }
+
+  sqrt() {
+    this.current = Math.sqrt(Number(this.current)).toString();
   }
 }
