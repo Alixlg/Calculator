@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { History } from './history'
 
 @Component({
   selector: 'app-calculator',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './calculator.component.html',
   styleUrl: './calculator.component.css'
 })
@@ -11,6 +13,8 @@ export class CalculatorComponent {
   current: string = '0';
   op: string = '';
   isMoreOption: boolean = false;
+  isHistory: boolean = false;
+  history: Array<History> = [];
 
   dot() {
     if (!this.current.includes('.')) {
@@ -22,6 +26,7 @@ export class CalculatorComponent {
     this.prev = '0';
     this.current = '0';
     this.op = '';
+    this.history.splice(0,this.history.length);
   }
 
   clearEntry() {
@@ -48,21 +53,28 @@ export class CalculatorComponent {
   equaliz() {
     let a = Number(this.prev);
     let b = Number(this.current);
+    let equaliz = '';
 
     switch (this.op) {
       case '+':
-        this.current = String(a + b);
+        equaliz = String(a + b);
+        this.current = equaliz;
         break;
       case '/':
-        this.current = String(a / b);
+        equaliz = String(a / b);
+        this.current = equaliz;
         break;
       case 'x':
-        this.current = String(a * b);
+        equaliz = String(a * b);
+        this.current = equaliz;
         break;
       case '-':
-        this.current = String(a - b);
+        equaliz = String(a - b);
+        this.current = equaliz;
         break;
     }
+
+    this.history.push(new History(this.prev, this.current, this.op, equaliz));
   }
 
   sin() {

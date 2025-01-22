@@ -15,12 +15,7 @@
   width: 15em;
   padding: 0.3em;
   border-radius: 0.2em;
-}
-
-.calculator>p {
-  margin: 0.2em;
-  display: flex;
-  justify-content: center;
+  margin: 1em;
 }
 
 .prev {
@@ -61,4 +56,26 @@
 
 .buttons button:hover {
   background-color: gray;
+}
+
+.top {
+  margin: 0.2em;
+}
+
+.top>a {
+  display: flex;
+  justify-content: right;
+  margin: 0.2em;
+}
+
+.top>p {
+  display: flex;
+  justify-content: left;
+  height: 0;
+  margin: 0;
+}
+
+#history {
+  overflow: scroll;
+  height: 19em;
 }
