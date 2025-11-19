@@ -26,7 +26,7 @@ export class CalculatorComponent {
     this.prev = '0';
     this.current = '0';
     this.op = '';
-    this.history.splice(0,this.history.length);
+    this.history.splice(0, this.history.length);
   }
 
   clearEntry() {
@@ -53,7 +53,9 @@ export class CalculatorComponent {
   equaliz() {
     let a = Number(this.prev);
     let b = Number(this.current);
+
     let equaliz = '';
+    let current = this.current;
 
     switch (this.op) {
       case '+':
@@ -74,7 +76,7 @@ export class CalculatorComponent {
         break;
     }
 
-    this.history.push(new History(this.prev, this.current, this.op, equaliz));
+    this.history.push(new History(this.prev, current, this.op, equaliz));
   }
 
   sin() {
